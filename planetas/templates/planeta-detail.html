@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} planeta.name {% endblock %}
+
+{% block content %}
+    <h2> {{ planeta.name}} </h2>
+    <h4> {{planeta.diameter }} km</h4>
+    <p class="date"> Planeta cadastrado em {{ planeta.created}} </p>
+    {{planeta.description | linebreaks}}
+
+    <a href="{% url 'planetario:update_planeta' planeta.id%}"> Edit</a>
+    <a href="{% url 'planetario:delete_planeta' planeta.id %}">Delete</a>
+{% endblock %}

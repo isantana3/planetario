@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %} Crud Planetas {% endblock %}
+
+{% block content %}
+    {% for planeta in planetas %}
+        <article>
+                <a href="{% url 'planetario:detail_planeta' planeta.id %}"> {{ planeta.name }}</a>    
+        </article>
+    {% endfor %}
+    <br><br>
+    <a href="{% url 'planetario:create_planeta' %}"> New planeta </a>
+{% endblock %}
