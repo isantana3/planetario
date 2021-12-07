@@ -1,0 +1,91 @@
+body {
+    background-image: url("../img/Stepin_BG.jpg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    font-size: 1.1rem;
+    color: #aa0707;
+    min-height: 100vh; 
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+main{
+    margin: 0 15%;
+}
+
+h1 {
+    text-align: center;
+    font-family: serif;
+    font-weight: normal;
+    border-bottom: 1px solid;
+}
+
+h2 {
+    color: #0072aa;
+    font-weight: normal;
+    margin-bottom: 1px;
+}
+
+a {
+    color:#0072aa;
+    text-decoration:none;
+}
+
+p.date {
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 1px;
+}
+
+label{
+    display: block;
+
+}
+
+.dark{
+    color: #000000 !important ;
+}
+
+.card{
+    margin-bottom: 30px;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.subtitle{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+footer{
+    min-height:50px; 
+    width: 100%;
+}
+
+.img-planeta{
+    margin-bottom: 50px;
+}
+
+.descript-planeta{
+    padding: 20px;
+    color: black;
+}
+
+.descpt-planeta{
+    background-color: #4c7397be;
+}
+
+.custom-form{
+    align-content: center;
+    min-width: 400px !important;
+    display: inline-block;
+    text-decoration: solid;
+    margin: 15px;
+    font-size: 1.2rem;
+}

@@ -1,9 +1,9 @@
-
-from django import forms
+from django.forms.fields import CharField
 from .models import Planeta
+from django.forms import ModelForm, TextInput, ImageField, DecimalField
 
 
-class PlanetaForm(forms.ModelForm):
+class PlanetaForm(ModelForm):
     class Meta:
         model = Planeta
-        fields = ['name', 'diameter', 'description',]
+        fields = ['name', 'image', 'diameter', 'description']

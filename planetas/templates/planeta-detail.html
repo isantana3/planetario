@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
-{% block title %} planeta.name {% endblock %}
+{% block title %} {{planeta.name}} {% endblock %}
+{% block subtitle %} {{planeta.name}} {% endblock %}
 
 {% block content %}
-    <h2> {{ planeta.name}} </h2>
-    <h4> {{planeta.diameter }} km</h4>
-    <p class="date"> Planeta cadastrado em {{ planeta.created}} </p>
-    {{planeta.description | linebreaks}}
-
-    <a href="{% url 'planetario:update_planeta' planeta.id%}"> Edit</a>
-    <a href="{% url 'planetario:delete_planeta' planeta.id %}">Delete</a>
+    {% if planeta %}
+    <div class="text-center">
+        <img class="img-fluid img-planeta" src="{{ planeta.image.url}}" alt="connect" style="max-height:300px">
+    </div>
+    {% endif %}
+    <div class="text-justfy rounded descpt-planeta">
+        <div class=" descript-planeta">
+            <h4> Diâmetro: {{planeta.diameter }} km</h4>
+            <p class="date"> Planeta cadastrado em {{ planeta.created}} </p>
+            {{planeta.description | linebreaks}}
+            
+        </div>
+        <a href="{% url 'planetario:update_planeta' planeta.id %}">
+            <button type="button" class="btn btn-primary btn-sm">Editar</button>
+        </a>
+        <a href="{% url 'planetario:delete_planeta' planeta.id %}">
+            <button type="button" class="btn btn-danger btn-sm">Deletar</button>
+        </a>
+    </div>
 {% endblock %}

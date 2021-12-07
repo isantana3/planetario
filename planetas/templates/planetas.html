@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
 {% block title %} Crud Planetas {% endblock %}
+{% block subtitle %} Crud Planetas {% endblock %}
 
 {% block content %}
     {% for planeta in planetas %}
-        <article>
-                <a href="{% url 'planetario:detail_planeta' planeta.id %}"> {{ planeta.name }}</a>    
-        </article>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ planeta.image.url}}" alt="{{ planeta.name}}">
+            <div class="card-body">
+              <h5 class="card-title">{{planeta.name}}</h5>
+              <p class="card-text dark"> {{ planeta.description|linebreaks|truncatewords:10 }} </p>
+              <a href="{% url 'planetario:detail_planeta' planeta.id %}" class="btn btn-primary">Ver detalhes sobre planeta</a>
+            </div>
+        </div>
     {% endfor %}
     <br><br>
-    <a href="{% url 'planetario:create_planeta' %}"> New planeta </a>
+    <a href="{% url 'planetario:create_planeta' %}"class="btn btn-primary"> New planeta </a>
 {% endblock %}

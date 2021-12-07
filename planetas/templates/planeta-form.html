@@ -1,17 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Document {% endblock %}
+{% block title %}Form {% endblock %}
+{% block subtitle %}New/Update Planeta{% endblock %}
 
 {% block content %}
-    <h1>New/Update Planeta</h1>
-    <form method="POST">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form }}
-        <button type="submit">Save</button>
+        <div class="custom-form">
+            {{ form.as_p }}
+
+            <button class="btn btn-success btn-lg" type="submit">Save</button>
+        </div>
     </form>
-
-
     {% if planeta %}
-        <a href="{% url 'planetario:delete_planeta' planeta.id %}">Delete</a>
+        <a href="{% url 'planetario:delete_planeta' planeta.id %}">
+            <button class="btn btn-danger btn-lg" type="submit">Delete</button>
+        </a>
     {% endif %}
+
+
 {% endblock %}

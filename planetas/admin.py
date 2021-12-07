@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from planetas.models import Planeta
+
+@admin.register(Planeta)
+class PlanetaAdmin(admin.ModelAdmin):
+    list_display = ("name", "diameter", "created", "updated")
