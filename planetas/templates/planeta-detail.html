@@ -17,10 +17,10 @@
             
         </div>
         <a href="{% url 'planetario:update_planeta' planeta.id %}">
-            <button type="button" class="btn btn-primary btn-sm">Editar</button>
+            <button type="button" class="btn btn-primary btn-lg">Editar</button>
         </a>
-        <a href="{% url 'planetario:delete_planeta' planeta.id %}">
-            <button type="button" class="btn btn-danger btn-sm">Deletar</button>
+        <a href="{% url 'planetario:delete_planeta' planeta.id %}" class="float-right">
+            <button type="button" class="btn btn-danger btn-lg">Deletar</button>
         </a>
     </div>
 {% endblock %}
